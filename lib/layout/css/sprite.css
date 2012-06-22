@@ -1,0 +1,36 @@
+/*
+#twitter_img {
+	width: 16px;
+	height: 16px;
+	background: url(/lib/layout/img/twitter-sprite.png);
+	position: relative;
+	margin: 10px auto; padding: 0;
+}
+#twitter_img li {margin: 0; padding: 0; list-style: none; position: absolute; top: 0;}
+
+#twitter_img li, #twitter_img a {height: 16px; width: 16px; display: block;}
+#reply {left: 0px; background-position: 0px 0px;}
+#fav {left: 16px; background-position: -32px 0px;}
+#rt {left: 64px; background-position: -64px 0px;}
+
+
+#panel1b a:hover {background: transparent url(test-3.jpg) 0 -200px no-repeat;}
+#panel2b a:hover {background: transparent url(test-3.jpg) -96px -200px no-repeat;}
+#panel3b a:hover {background: transparent url(test-3.jpg) -172px -200px no-repeat;}
+#panel4b a:hover {background: transparent url(test-3.jpg) -283px -200px no-repeat;}
+*/
+
+a { cursor: pointer; }
+a .none { color: @black; }
+.twToolBox { visibility: hidden; color: #999; }
+.make_comment { display: none; }
+
+.droparea {
+    text-align: center;
+}
+.droparea input {
+	cursor: pointer; 
+    /*visibility: hidden; */
+	border-width: 0px;
+	border-color: 000;
+}

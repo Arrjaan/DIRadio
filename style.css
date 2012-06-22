@@ -1,0 +1,21 @@
+body {
+	height: 100%;
+	overflow: auto;
+}
+
+#player {
+	text-align: center;
+	background-position: bottom center;
+	position: fixed;
+	bottom: 0px;
+	height: 40px;
+	width: 100%; /*don't forget this*/
+	padding: 0;
+	margin: 0;
+	display: block;
+	background-color: white;
+}
+
+#wrap {
+	padding-bottom: 40px;
+}
