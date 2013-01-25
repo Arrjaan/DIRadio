@@ -21,7 +21,7 @@
         <script type="text/javascript" src="lib/js/main.js"></script>
 	</head>
 
-    <body onload="init();">
+    <body>
    		<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -34,8 +34,8 @@
           <a class="brand" href="/">DI Radio Player</a>
           <div class="nav-collapse">
             <ul class="nav">
-				<li><a href="DIRadio.html" onclick="stopPlayer();">Player</a></li>
-				<li><a href="config.html" onclick="stopPlayer();">Configuration</a></li>		
+				<li><a href="DIRadio.html">Player</a></li>
+				<li><a href="config.html">Configuration</a></li>		
             </ul>
 			<ul class="nav pull-right">
 				<li><a href="#" onclick="trayIcon.bitmaps = [];air.NativeApplication.nativeApplication.exit();">Exit</a></li>		
@@ -46,20 +46,27 @@
     </div>
 		
         <div class="container" id="wrap">  
-			<h3>DI Radio Stations</h3>
-			<ul id="channellist">
-			<div class="progress progress-striped active">
-		    	<div class="bar" style="width: 100%;"></div>
+			<h3>Configuration</h3>
+			
+			Lanch at startup?<br> 
+			
+			<div class="btn-group" data-toggle="buttons-radio">
+		   	 	<button type="button" id="yes" class="btn" onclick="air.NativeApplication.nativeApplication.startAtLogin = true;">Yes</button>
+		    	<button type="button" id="no" class="btn" onclick="air.NativeApplication.nativeApplication.startAtLogin = false;">No</button>
 		    </div>
-			</ul>
         </div>
 		
-		<div id="player">
-			<div id="none">Click on a channel to play</div>
-			<div id="np" style="display: none;">NP: DI Radio - <span id="station"></span><br />
-			<i class="icon-play"></i><a onclick="stopPlayer();"><i class="icon-stop"></i></a>
-			<!--<br><center><input type="range" min="0" max="1" onchange="air.SoundMixer.soundTransform = new air.SoundTransform(this.value, 0);"></center><br><br>a<br>--></div>
-		</div>
+		<script>
+			if ( startup() === true ) { 
+				document.getElementById("yes").className = 'btn active' 
+				document.getElementById("no").className = 'btn'
+			}
+			else { 
+				document.getElementById("no").className = 'btn active' 
+				document.getElementById("yes").className = 'btn' 
+			}
+		</script>
+			
 		
 		<script src="/lib/layout/js/jquery.js"></script>
     	<script src="/lib/layout/js/bootstrap.min.js"></script>

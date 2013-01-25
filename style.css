@@ -1,3 +1,5 @@
+#timepl { display: none; }
+
 body {
 	height: 100%;
 	overflow: auto;
@@ -19,3 +21,45 @@ body {
 #wrap {
 	padding-bottom: 40px;
 }
+
+
+/*
+.slider {
+    background:url(/lib/layout/img/small-horizontal.png) no-repeat  0 -5px;
+    width:94px;
+    height:5px;
+    cursor:pointer;
+    position: relative;
+    float:left;
+}
+
+.handle {
+    background:transparent url(/lib/layout/img/small-horizontal.png) no-repeat scroll -97px 0;
+    height:13px;
+    position:absolute;
+    top:-5px;
+    width:12px;
+    cursor:move;
+}
+
+.range {
+    font-size:10px;
+    border:0;
+    background:none;
+    width: 30px;
+    margin:-5px 0 10px 0;
+    color:#fff;
+    text-align:center;
+    -moz-border-radius:2px;
+    -webkit-border-radius:2px;
+}
+
+.range:focus {
+    background-color:#000;
+}
+
+.range[readonly]:focus {
+    background-color:transparent;
+}
+
+*/
