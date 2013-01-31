@@ -48,22 +48,71 @@
         <div class="container" id="wrap">  
 			<h3>Configuration</h3>
 			
-			Lanch at startup?<br> 
+			<h4>Lanch at startup?</h4>
 			
 			<div class="btn-group" data-toggle="buttons-radio">
 		   	 	<button type="button" id="yes" class="btn" onclick="air.NativeApplication.nativeApplication.startAtLogin = true;">Yes</button>
 		    	<button type="button" id="no" class="btn" onclick="air.NativeApplication.nativeApplication.startAtLogin = false;">No</button>
-		    </div>
+		    </div><br>
+			
+			<h4>Show channel description?</h4> 
+			
+			<div class="btn-group" data-toggle="buttons-radio">
+		   	 	<button type="button" id="yes2" class="btn" onclick="air.EncryptedLocalStore.setItem('desc', strTrue);">Yes</button>
+		    	<button type="button" id="no2" class="btn" onclick="air.EncryptedLocalStore.setItem('desc', strFalse);">No</button>
+		    </div><br>
+			
+			<h4>Premium Listen Key</h4>
+			
+			If you have a premium account, you can add your listen key here. You can find your listen key <a href="http://www.di.fm/member/listen_key" target="_blank">here</a>. 
+			Are you not premium yet? <a href="http://www.di.fm/member/premium/trial" target="_blank">Sign up</a> for your free trial here.<br><br>
+			
+			<input type="text" id="listenkey" onchange="listenKey(this.value)"><br><br>
+			
+			Your current Listen Key: <span id="key"></span>
+			
+			<br><br>
+			
+			<script>
+				var xmlString = air.NativeApplication.nativeApplication.applicationDescriptor; 
+				var appXml = new DOMParser(); 
+				var xmlobject = appXml.parseFromString(xmlString, "text/xml"); 
+				var root = xmlobject.getElementsByTagName('application')[0]; 
+				var appId = root.getElementsByTagName("id")[0].firstChild.data; 
+				var appVersion = root.getElementsByTagName("version")[0].firstChild.data; 
+				
+				document.write(appId + " - Version " + appVersion);
+			</script>
         </div>
 		
 		<script>
+			var strTrue = new air.ByteArray();
+    		strTrue.writeUTFBytes('true');
+			
+			var strFalse = new air.ByteArray();
+    		strFalse.writeUTFBytes('false');
+			
 			if ( startup() === true ) { 
-				document.getElementById("yes").className = 'btn active' 
-				document.getElementById("no").className = 'btn'
+				document.getElementById("yes").className = 'btn active';
+				document.getElementById("no").className = 'btn';
 			}
 			else { 
-				document.getElementById("no").className = 'btn active' 
-				document.getElementById("yes").className = 'btn' 
+				document.getElementById("no").className = 'btn active';
+				document.getElementById("yes").className = 'btn';
+			}
+			
+			var desc = air.EncryptedLocalStore.getItem('desc')
+			
+			document.getElementById("listenkey").value = listenkey;
+			document.getElementById("key").innerHTML = listenkey;
+			
+			if ( desc == 'true' ) { 
+				document.getElementById("yes2").className = 'btn active';
+				document.getElementById("no2").className = 'btn';
+			}
+			else { 
+				document.getElementById("no2").className = 'btn active'; 
+				document.getElementById("yes2").className = 'btn';
 			}
 		</script>
 			
