@@ -3,6 +3,8 @@ DI Radio for Windows and Mac
 
 Welcome to the DI Radio for Windows and Mac project! Feel free to contribute. 
 
+![Screenshot 1](http://arrjaan.github.com/DIRadio/screens/1.jpg "Main menu") ![Screenshot 2](http://arrjaan.github.com/DIRadio/screens/2.jpg "Configuration menu")
+
 What is DI Radio?
 -------
 
