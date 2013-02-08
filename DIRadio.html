@@ -19,9 +19,10 @@
 		<script type="text/javascript" src="lib/js/tray.js"></script>
 		<script type="text/javascript" src="lib/js/notification.js"></script>
         <script type="text/javascript" src="lib/js/main.js"></script>
+		<script type="text/javascript" src="lib/js/nav.js"></script>
 	</head>
 
-    <body onload="init();">
+    <body>
    		<div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -34,8 +35,8 @@
           <a class="brand" href="/">DI Radio Player</a>
           <div class="nav-collapse">
             <ul class="nav">
-				<li><a href="DIRadio.html" onclick="stopPlayer();">Player</a></li>
-				<li><a href="config.html" onclick="stopPlayer();">Configuration</a></li>		
+				<li><a href="#" id="main">Player</a></li>
+				<li><a href="#" id="conf">Configuration</a></li>		
             </ul>
 			<ul class="nav pull-right">
 				<li><a href="#" onclick="trayIcon.bitmaps = [];air.NativeApplication.nativeApplication.exit();">Exit</a></li>		
@@ -56,9 +57,10 @@
 		
 		<div id="player">
 			<div id="none">Click on a channel to play</div>
-			<div id="np" style="display: none;">NP: DI Radio - <span id="station"></span><br />
-			<i class="icon-play"></i><a onclick="stopPlayer();"><i class="icon-stop"></i></a>
-			<!--<input type="text" class="input x-small" onchange="air.SoundMixer.soundTransform = new air.SoundTransform(this.value, 0);"></div>-->
+			<div id="np" style="display: none;">
+				DI Radio - <span id="station"></span> <a onclick="stopPlayer();"><i class="icon-stop"></i></a><br />
+				<span id="currentSong"></span>
+			</div>
 		</div>
 		
 		<script src="/lib/layout/js/jquery.js"></script>
