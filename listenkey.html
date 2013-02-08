@@ -1,0 +1,51 @@
+<html>
+	<head>
+        <title>DI Radio</title>
+        
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/lib/layout/css/bootstrap.css" rel="stylesheet">
+	    <style type="text/css">
+	      body {
+	        padding-top: 60px;
+	        padding-bottom: 40px;
+	      }
+	    </style>
+	    <link href="/lib/layout/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="/lib/layout/css/sprite.css" rel="stylesheet">
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+	 		
+        <script type="text/javascript" src="lib/air/AIRAliases.js"></script>
+		<script type="text/javascript" src="lib/jquery/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="lib/js/notification.js"></script>
+        <script type="text/javascript" src="lib/js/main.js"></script>
+		<script type="text/javascript" src="lib/js/nav.js"></script>
+	</head>
+
+    <body>
+		<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">DI Radio Player</a>
+        </div>
+      </div>
+    </div>
+	
+        <div class="container" id="wrap">
+        	<span id="message"></span>
+			  
+			<h3>Change Listen key</h3>
+			<input type="text" id="listenkey" onchange="newKey(this.value);">
+
+			<br><br>
+			
+			Your current Listen Key: <span id="key"></span>
+        </div>
+
+		<script>
+			document.getElementById("listenkey").value = listenkey;
+			document.getElementById("key").innerHTML = listenkey;
+		</script>	
+		<script src="/lib/layout/js/jquery.js"></script>
+    	<script src="/lib/layout/js/bootstrap.min.js"></script>
+    </body>
+</html>
