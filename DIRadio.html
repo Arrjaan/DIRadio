@@ -16,6 +16,7 @@
 	 		
         <script type="text/javascript" src="lib/air/AIRAliases.js"></script>
 		<script type="text/javascript" src="lib/jquery/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript" src="lib/js/db.js"></script>
 		<script type="text/javascript" src="lib/js/tray.js"></script>
 		<script type="text/javascript" src="lib/js/notification.js"></script>
         <script type="text/javascript" src="lib/js/main.js"></script>
@@ -23,7 +24,7 @@
 	</head>
 
     <body>
-   		<div class="navbar navbar-fixed-top">
+   		<div class="navbar navbar-fixed-top navbar-inverse">
       <div class="navbar-inner">
         <div class="container">
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
@@ -36,7 +37,8 @@
           <div class="nav-collapse">
             <ul class="nav">
 				<li><a href="#" id="main">Player</a></li>
-				<li><a href="#" id="conf">Configuration</a></li>		
+				<li><a href="#" id="conf">Configuration</a></li>	
+				<li><a href="#" id="fav">Favorites</a></li>	
             </ul>
 			<ul class="nav pull-right">
 				<li><a href="#" onclick="trayIcon.bitmaps = [];air.NativeApplication.nativeApplication.exit();">Exit</a></li>		
@@ -59,6 +61,9 @@
 			<div id="none">Click on a channel to play</div>
 			<div id="np" style="display: none;">
 				DI Radio - <span id="station"></span> <a onclick="stopPlayer();"><i class="icon-stop"></i></a><br />
+				<div class="progressbar">
+					<div id="bar"></div>	
+    			</div>
 				<span id="currentSong"></span>
 			</div>
 		</div>

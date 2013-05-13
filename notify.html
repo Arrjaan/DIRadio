@@ -12,13 +12,11 @@
 </head>
 <body onclick="show();">
 
-<div class="growlUI" style="display:none" onclick="show();" onmouseover="timer.stop();" \\onmouseout="doTimerComplete(null);"> 
+<div class="growlUI" id="content" style="display:none"> 
 	<span class="close" onclick="nativeWindow.close();"></span>
-    <h1 id="title">Well hey there...</h1> 
-    <h2 id="msg">I'm here to notify you</h2> 
+    <h1 id="title"></h1> 
+    <h2 id="msg"></h2> 
 </div> 
-
-<iframe id="main" style="display:none"></iframe>
 
 <script type="text/javascript">
 	function show() {
@@ -42,9 +40,14 @@
 	msg = msg.split("|");
 	fs.close();
 	
-	document.getElementById("title").innerHTML = msg[0];
-	document.getElementById("msg").innerHTML = msg[1];
-
+	if (msg[0] == "TITLE") {
+		$("#content").html('<h4>' + msg[1] + '</h4>');
+	}
+	else {
+		document.getElementById("title").innerHTML = msg[0];
+		document.getElementById("msg").innerHTML = msg[1];
+	}
+	
 	$(document).ready(function() { 
 		// Create a timer instance and listen for completion
 		timer = new air.Timer( DELAY, REPEAT );
